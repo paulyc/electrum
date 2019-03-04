@@ -145,9 +145,6 @@ class SqliteDB(PrintError):
     def modified(self):
         return self._modified
 
-    def commit(self):
-        self.DBSession.commit()
-
     def dump(self):
         with open(self.tmp_path, 'rb') as f:
             return f.read()

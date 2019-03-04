@@ -91,7 +91,7 @@ class WalletStorage(PrintError):
             return
         if not self.db.modified():
             return
-        self.db.commit()
+
         s = self.encrypt_before_writing(self.db.dump())
         temp_path = "%s.tmp.%s" % (self.path, os.getpid())
         with open(temp_path, "wb") as f:
